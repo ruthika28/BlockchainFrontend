@@ -15,7 +15,7 @@ function Mytokens(props) {
   const [selectedToken, setSelectedToken] =useState([]);
   function handleClick()
  {
-    fetch('http://localhost:8001/getDonor/'+currentUser).then(response => response.json())
+    fetch('https://blockchainbackend-render.onrender.com/getDonor/'+currentUser).then(response => response.json())
     .then(data => {setTokens(data);}).catch(error => {
         console.error(error);
       });
@@ -31,7 +31,7 @@ function Mytokens(props) {
     .on('transactionHash', function(hash) {
       console.log('Transaction hash:', hash);
       handleClick();
-      fetch('http://localhost:8001/updateDonor', {
+      fetch('https://blockchainbackend-render.onrender.com/updateDonor', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

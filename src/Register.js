@@ -21,7 +21,7 @@ function Register(props) {
   
   function handleClick()
   {
-     fetch('http://localhost:8001/allFundraisers').then(response => response.json())
+     fetch('https://blockchainbackend-render.onrender.com/allFundraisers').then(response => response.json())
      .then(data => {
       setFundRaiser(data);
       if(data['error']=='User not found') 
@@ -46,7 +46,7 @@ function Register(props) {
       .register(values.address, values.goalAmount)
       .send({ from: currentUser });  
        
-        fetch('http://localhost:8001/registerFundraiser', {
+        fetch('https://blockchainbackend-render.onrender.com/registerFundraiser', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'

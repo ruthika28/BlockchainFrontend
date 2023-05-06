@@ -20,7 +20,7 @@ function Donate(props) {
 
  function handleClick()
  {
-    fetch('http://localhost:8001/getDonor/'+currentUser).then(response => response.json())
+    fetch('https://blockchainbackend-render.onrender.com/getDonor/'+currentUser).then(response => response.json())
     .then(data => {setDonations(data); console.log('donations1: ', donations);});    
   }
 
@@ -56,7 +56,7 @@ function Donate(props) {
     console.log('tokens: ',totalTokens); 
     try{
       await contract.methods.donateFunds(values.donatedTo.toString()).send({from:currentUser, value: Web3.utils.toWei(values.amount.toString(), "ether")});     
-        fetch('http://localhost:8001/insertDonor', {
+        fetch('https://blockchainbackend-render.onrender.com/insertDonor', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'

@@ -27,7 +27,7 @@ function Unregister(props) {
       await contract.methods
       .unRegister(values.address)
       .send({ from: currentUser });
-          fetch('http://localhost:8001/deleteFundraiser', {
+          fetch('https://blockchainbackend-render.onrender.com/deleteFundraiser', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
