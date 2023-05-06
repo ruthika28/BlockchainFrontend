@@ -40,10 +40,8 @@ function App() {
             window.alert('Non-Ethereum browser detected. You should consider trying MetaMask!')
           }
           const accounts = await weba3.eth.getAccounts();
-          console.log('accounts: ',accounts);  
           setAccounts(accounts);
           setcurrentUser(accounts[0]);
-          console.log('account: ',accounts[0]);
           const networkId = await weba3.eth.net.getId();
           console.log('network id: ', networkId);
           const deployedNetwork = Donation.networks[networkId];

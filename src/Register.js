@@ -32,7 +32,7 @@ function Register(props) {
    }
 
   async function onFinish(values) {
-    console.log(accounts[0]);
+    console.log(contract.events, contract.methods);
     await contract.events.Print((error, result) => {
       if (!error){
         alert(result.returnValues['data']);
