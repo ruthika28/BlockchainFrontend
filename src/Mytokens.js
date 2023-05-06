@@ -66,7 +66,7 @@ function Mytokens(props) {
        {tokens.map(item => (
         <Card style={{width:'50%',margin:'20px 0px 10px 20px'}}>
           <p>Token: {item['token']}</p>
-          <p>Donated To: {item['donatedTo']}</p>
+          <p>Donated To: {item['donatedto']}</p>
           <p>NFT Value: {item['value']}</p>
           <p>Owner Address: {item['owner']}</p>
           <button  type="primary" onClick={() => transferNFT(item)}  style={{ backgroundColor: "black", color: "white", padding: "10px 20px", border: "none", borderRadius: "5px", cursor: "pointer" }}

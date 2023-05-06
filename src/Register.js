@@ -98,7 +98,7 @@ function Register(props) {
        {fundRaiser.map(item => (
         <Card style={{width:'70%',margin:'50px 0px 10px 40px'}}>
           <p>Fundraiser Address: {item['address']}</p>
-          <p>Amount Requested: {item['goalAmount']}</p>
+          <p>Amount Requested: {item['goalamount']}</p>
         </Card>
       ))}
     </div>}
