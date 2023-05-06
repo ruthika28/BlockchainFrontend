@@ -48,7 +48,7 @@ function Donate(props) {
     console.log('tokens: ',totalTokens);
     values['token']=totalTokens;
     values['owner']=currentUser;
-    await contract.methods.currentPrice().call({from:owner})
+    await contract.methods.currentPrice().call({from:currentUser})
     .then(result => {      
       values['value']=result;
       console.log(values); 

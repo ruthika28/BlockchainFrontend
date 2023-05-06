@@ -1,8 +1,5 @@
 import './App.css';
-import Web3 from 'web3';
 import {useState,useEffect} from "react";
-import Donation from './contracts/Donation.json';
-import {Routes, Route, Link} from 'react-router-dom';
 import { Form, Input, Button,Select, Card } from 'antd';
 import toastr from 'toastr';
 import 'toastr/build/toastr.min.css';

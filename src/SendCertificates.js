@@ -17,7 +17,7 @@ function SendCertificates(props) {
     height: '100vh',
   };
   async function handleClick() {
-    await contract.methods.currentPrice().call({from:owner})
+    await contract.methods.currentPrice().call({from:currentUser})
     .then(result => {
       setcurrentValue(result);
       console.log(result); 
@@ -25,11 +25,11 @@ function SendCertificates(props) {
   }
 
   async function appreciateNFT () {   
-    await contract.methods.setNFT(Number(currentValue)+1).send({from:owner});
+    await contract.methods.setNFT(Number(currentValue)+1).send({from:currentUser});
   };
   
   async function depreciateNFT () {
-    await contract.methods.setNFT(Number(currentValue)-1).send({from:owner});
+    await contract.methods.setNFT(Number(currentValue)-1).send({from:currentUser});
   };
 
   async function onFinish(values) {
