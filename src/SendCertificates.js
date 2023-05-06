@@ -9,7 +9,7 @@ import { Form, Input, Button, Select } from 'antd';
 function SendCertificates(props) {
   const {web3, contract, owner, accounts, contractNFT, currentUser} = props;
   const { Option } = Select;
-  const [currentValue, setcurrentValue] = useState(100);
+  const [currentValue, setcurrentValue] = useState(1);
   const styles = {
     backgroundImage: 'url(/Donate.jpeg)',
     backgroundSize: 'cover',
