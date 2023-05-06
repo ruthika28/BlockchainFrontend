@@ -44,19 +44,19 @@ function App() {
           setAccounts(accounts);
           setcurrentUser(accounts[0]);
           console.log('account: ',accounts[0]);
-          const networkId = await web3.eth.net.getId();
+          const networkId = await weba3.eth.net.getId();
           console.log('network id: ', networkId);
           const deployedNetwork = Donation.networks[networkId];
-          const contract = new web3.eth.Contract(Donation.abi, deployedNetwork.address,{
+          const contract = new weba3.eth.Contract(Donation.abi, deployedNetwork.address,{
             from: accounts[0],
             gas: '3000000'
           });
           const deployedNetworkNFT = CertificateNFT.networks[networkId];
-          const contractNFT = new web3.eth.Contract(CertificateNFT.abi, deployedNetworkNFT.address,{
+          const contractNFT = new weba3.eth.Contract(CertificateNFT.abi, deployedNetworkNFT.address,{
             from: accounts[0],
             gas: '3000000'
           });
-          setWeb3(web3);
+          setWeb3(weba3);
           setContractNFT(contractNFT);
           setContract(contract);
         } catch (error) {
