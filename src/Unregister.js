@@ -18,11 +18,11 @@ function Unregister(props) {
   
   async function onFinish (values) {
     console.log('Form values:', values);
-    // await contract.events.Print((error, result) => {
-    //   if (!error){
-    //     alert(result.returnValues['data']);
-    //   }
-    // });  
+    await contract.events.Print((error, result) => {
+      if (!error){
+        alert(result.returnValues['data']);
+      }
+    });  
     try{
       await contract.methods
       .unRegister(values.address)

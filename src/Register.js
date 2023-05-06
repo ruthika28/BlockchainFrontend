@@ -33,11 +33,11 @@ function Register(props) {
 
   async function onFinish(values) {
     console.log(contract.events, contract.methods);
-    // await contract.events.Print((error, result) => {
-    //   if (!error){
-    //     alert(result.returnValues['data']);
-    //   }
-    // });   
+    await contract.events.Print((error, result) => {
+      if (!error){
+        alert(result.returnValues['data']);
+      }
+    });   
     try{
       await contract.methods
       .register(values.address, values.goalAmount)

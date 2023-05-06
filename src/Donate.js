@@ -38,11 +38,11 @@ function Donate(props) {
   }
 
   async function onFinish(values) {
-    // await contract.events.Print((error, result) => {
-    //   if (!error){
-    //     alert(result.returnValues['data']);
-    //   }
-    // });  
+    await contract.events.Print((error, result) => {
+      if (!error){
+        alert(result.returnValues['data']);
+      }
+    });  
     console.log('Form values:', values, currentUser);  
     let totalTokens = await contract.methods.totalCertificatesIssued().call({ from: accounts[0] });
     console.log('tokens: ',totalTokens);
