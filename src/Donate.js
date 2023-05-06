@@ -21,7 +21,7 @@ function Donate(props) {
  function handleClick()
  {
     fetch('https://blockchainbackend-render.onrender.com/getDonor/'+currentUser).then(response => response.json())
-    .then(data => {setDonations(data); console.log('donations1: ', donations);});    
+    .then(data => {setDonations(data['rows']); console.log('donations1: ', donations);});    
   }
 
   async function showDetails() {

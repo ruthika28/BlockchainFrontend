@@ -16,7 +16,7 @@ function Mytokens(props) {
   function handleClick()
  {
     fetch('https://blockchainbackend-render.onrender.com/getDonor/'+currentUser).then(response => response.json())
-    .then(data => {setTokens(data);}).catch(error => {
+    .then(data => {setTokens(data['rows']);}).catch(error => {
         console.error(error);
       });
 
@@ -37,7 +37,7 @@ function Mytokens(props) {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({token:values['token'], owner:values['buyer']})}).then(response => response.json())
-      .then(data => {setTokens(data);}).catch(error => {
+      .then(data => {setTokens(data['rows']);}).catch(error => {
           console.error(error);
         });
       alert('Ownership transferred to ', values['buyer']);

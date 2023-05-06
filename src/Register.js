@@ -20,7 +20,7 @@ function Register(props) {
   {
      fetch('https://blockchainbackend-render.onrender.com/allFundraisers').then(response => response.json())
      .then(data => {
-      setFundRaiser(data);
+      setFundRaiser(data['rows']);
       if(data['error']=='User not found') 
       {
         alert('No data found');
