@@ -21,7 +21,7 @@ function Donate(props) {
  function handleClick()
  {
     fetch('https://blockchainbackend-render.onrender.com/getDonor/'+currentUser).then(response => response.json())
-    .then(data => {setDonations(data['rows']); console.log('donations1: ', donations);});    
+    .then(data => {setDonations(data); console.log('donations1: ', donations);});    
   }
 
   async function showDetails() {
@@ -114,7 +114,7 @@ function Donate(props) {
       <div>
        {donations.length>0 && donations.map(item => (
         <Card style={{width:'70%',margin:'50px 0px 10px 40px'}}>
-          <p>Donated To: {item['donatedTo']}</p>
+          <p>Donated To: {item['donatedto']}</p>
           <p>Amount Donated: {item['amount']}</p>
         </Card>
       ))}

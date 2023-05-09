@@ -13,10 +13,11 @@ function Mytokens(props) {
   const {web3, contract, owner, accounts, contractNFT, currentUser} = props;
   const [tokens,setTokens]=useState([]);
   const [selectedToken, setSelectedToken] =useState([]);
-  function handleClick()
+  async function handleClick()
  {
-    fetch('https://blockchainbackend-render.onrender.com/getDonor/'+currentUser).then(response => response.json())
-    .then(data => {setTokens(data['rows']);}).catch(error => {
+    await fetch('https://blockchainbackend-render.onrender.com/getDonor/'+currentUser).then(response => response.json())
+    .then(data => {setTokens(data);
+    console.log('data: ', data, currentUser);}).catch(error => {
         console.error(error);
       });
 
